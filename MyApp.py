@@ -2,7 +2,7 @@ import json
 from difflib import  get_close_matches
 data = json.load(open("data.json"))
 
-def translate(word):
+def findWord(word):
     word = word.lower()     #making word case insensitive
     if word in data:
         return(data[word])
@@ -22,7 +22,7 @@ def translate(word):
         return "Word doesn't exist"
 
 inputWord = input("enter the word : ")
-output = translate(inputWord)
+output = findWord(inputWord)
 
 if type(output) == list:
     for item in output:
