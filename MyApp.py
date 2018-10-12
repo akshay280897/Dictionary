@@ -12,9 +12,9 @@ def findWord(word):
         return(data[word.upper()])
     elif len(get_close_matches(word,data.keys())) > 0:
         yn = input("\nDid you mean %s instead ? if yes 'Y' or no 'N' : " % get_close_matches(word,data.keys())[0])
-        if yn == 'Y':
+        if (yn == 'Y') or (yn == 'y'):
             return data[get_close_matches(word,data.keys())[0]]
-        elif yn == 'N':
+        elif (yn == 'N') or ( yn == 'n'):
             return "Word Doesn't exists"
         else:
             return "Wrong input"
